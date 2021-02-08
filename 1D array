@@ -1,0 +1,165 @@
+#include <stdio.h>
+int main()
+{
+    int choice,i,n,j,v,z,y;
+    int arr[40];
+    int sum=0,temp;
+    int side,place;
+    int insert,new;
+    int max,min;
+    printf("Size of array is:");
+        scanf("%d",&n);
+        for(i=0;i<n;i++)
+        {
+            printf("Enter the %d element",i);
+            scanf("%d",&arr[i]);
+            sum=sum+arr[i];
+        }
+        printf("The array is:");
+        for(i=0;i<n;i++)
+        {
+        printf("%d",arr[i]);
+        }
+    while(1)
+    {
+     printf("\n1.Sum of array\n");
+     printf("2.Rotation of array\n");
+     printf("3.Insertion / Deletion of array\n");
+     printf("4.Max & Min value of array\n");
+     printf("Enter your chioce:");
+     scanf("%d",&choice);
+     switch(choice)
+     {
+        case 1:
+        printf("\nPrograme for Sum of array\n");
+        printf("\nThe sum of arrary is %d\n",sum);
+        break;
+        case 2:
+        printf("\nRotation of array\n");
+        printf("\nEnter the side you want to rotate the array:\n");
+        printf("1.left\n");
+        printf("2.right\n");
+        scanf("%d",&side);
+        switch(side)
+        {
+         case 1:
+         printf("\nleft Rotation\n");
+         printf("Enter how many place you want to shift the arrary");
+         scanf("%d",&place);
+         for(j=1;j<=place;j++)
+         {
+             temp=arr[0];
+             for(i=0;i<n-1;i++)
+             {
+             arr[i]=arr[i+1];
+             }
+             arr[i]=temp;
+         }
+        for(i=0;i<n;i++)
+         {
+               printf("%d",arr[i]);
+         }
+         break;
+         case 2:
+         printf("\nright rotation\n");
+         printf("Enter how many place you want to shift the arrary");
+         scanf("%d",&place);
+         for(j=0;j<place;j++)
+         {
+             temp=arr[n-1];
+             for(i=n-1;i>0;i--)
+             {
+             arr[i]=arr[i-1];
+             }
+             arr[i]=temp;
+         }
+         for(i=0;i<n;i++)
+         {
+               printf("%d\n",arr[i]);
+         }
+         break;
+        }
+        break;
+        case 3:
+        printf("Insertion / Deletion of array\n");
+        printf("\n1.Insertion");
+        printf("\n2.Deletion\n");
+        scanf("%d",&v);
+        switch(v)
+        {
+         case 1:
+         printf("\nFor Insertion");
+         printf("\nEnter the element you want to insert");
+         scanf("%d",&new);
+         printf("Enter the place you want to insert the element");
+         scanf("%d",&j);
+         for(i=0;i<j-1;i++)
+         {
+            arr[i]=arr[i]; 
+         }
+         for(i=n;i>=j;i--)
+         {
+             arr[i]=arr[i-1];
+         }
+         if(i==j-1)
+         {
+             arr[i]=new;
+         }
+         for(i=0;i<=n;i++)
+         {
+         printf("%d",arr[i]);
+         }
+         break;
+         case 2:
+         printf("For Deletion");
+         printf("Enter the place at which you want to delete the element");
+         scanf("%d",&j);
+         for(i=0;i<z-1;i++)
+         {
+             arr[i]=arr[i];
+         }
+         for(i=z-1;i<n-1;i++)
+         {
+             arr[i]=arr[i+1];
+         }
+         for(i=0;i<n-1;i++)
+         {
+         printf("%d",arr[i]);
+         }
+         break;
+        }
+        break;
+        case 4:
+        printf("Max & Min value of array\n");
+        printf("\n1.Maximum");
+        printf("\n2.Minimum\n");
+        scanf("%d",&y);
+        switch(y)
+        {
+            case 1:
+             max=arr[0];
+             for(i=0;i<n;i++)
+             {
+                 if(arr[i]>max)
+                 max=arr[i];
+              }
+              printf("The maximum value is %d",max);
+             break;
+             
+             case 2:
+             min=arr[0];
+             for(i=0;i<n;i++)
+             {
+                 if(arr[i]<min)
+                 min=arr[i];
+              }
+              printf("The minimum value is %d",min);
+             break;
+        }
+        break;
+        default:
+        printf("Enter right choice\n");
+     }
+    }
+    return 0;
+}
