@@ -1,0 +1,56 @@
+#include<iostream>
+#include<climits>
+using namespace std;
+int main ()
+{
+    int arr[10], n, i, max, min;
+    int sum=0;
+    cout << "Enter the size of the array : ";
+    cin >> n;
+    for (i = 0; i < n; i++)
+    {
+        cout << "Enter the "<<i<< " elements of the array : ";
+        cin >> arr[i];
+        sum=sum+arr[i];
+    }
+    max = arr[0];
+    for (i = 0; i < n; i++)
+    {
+        if (max < arr[i])
+        {
+            max = arr[i];
+        }
+    }
+    min = arr[0];
+    for (i = 0; i < n; i++)
+    {
+        if (min > arr[i])
+        {
+            min = arr[i];
+        }
+    }
+    cout << "Largest element : " << max<<endl;
+    cout << "Smallest element : " << min<<endl;
+    cout << "The sum of array is:"<<sum<<endl;
+    int Largest = INT_MIN;
+    int secondlargest = INT_MIN;
+    for (i = 0; i < n; i++)
+    {
+        if(arr[i] > Largest)
+        {
+            secondlargest = Largest;
+            Largest = arr[i];
+        }
+        else
+        {
+            if(arr[i] > secondlargest and arr[i] < Largest)
+            {
+                secondlargest = arr[i];
+            }
+        }
+    }
+    
+    cout<<"The second largest number of array is :";
+    cout<<secondlargest<<endl;
+    return 0;
+}
