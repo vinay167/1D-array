@@ -52,5 +52,19 @@ int main ()
     
     cout<<"The second largest number of array is :";
     cout<<secondlargest<<endl;
+    cout<<"\nEnter the place you want to shift the array :";
+    cin>>v;
+    
+       for(j=0;j<v;j++)
+       {
+            temp = arr[0];
+     for (i = 0; i < n - 1; i++)
+        arr[i] = arr[i + 1];
+ 
+     arr[n-1] = temp;
+       }
+    
+     for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
     return 0;
 }
