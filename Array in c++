@@ -27,8 +27,8 @@ int main()
          do
            {
               
-         cout<<" 1-Arrays operation(Search,Insert,Delete\n2-Array alternative printing\n3-Maximum and minimum elements in array\n4-Second largest in array\n5-Reverse of array ";
-         cout<<" 6-Reverse the array\n7-Rotation of array";
+         cout<<" 1-Arrays operation(Search,Insert,Delete\n2-Array alternative printing\n3-Maximum and minimum elements in array\n4-Second largest in array ";
+         cout<<" 5-Reverse the array\n6-Rotation of array";
          cin>>choice1;
                switch(choice1)
                {
@@ -103,7 +103,7 @@ int main()
                      cout<<secondlargest;
                      break;
                     }
-                 case 7: 
+                 case 6: 
                    {
                      cout<<"\nEnter the place you want to shift the array :";
                      cin>>v;
