@@ -152,6 +152,9 @@ int main()
             break;
           
          break;  
+         case 2:
+         cout<<"Enter the string\n"<<endl;
+         break;
         }
         
     }
