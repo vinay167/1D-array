@@ -7,13 +7,21 @@ int main()
     int i,choice,choice1;
     do
     {
-     std::cout << "1-Array\n 2-String\n 3-Searching\n 4-Sorting " << std::endl;    
+        cout<<"In which section you want to go"<<endl;
+     std::cout <<" 1-Array\n 2-String\n 3-Linked list" << std::endl;    
      cout<<"Enter Your Choice :";
      cin>>choice;
      switch(choice)
        {
          case 1:
-         int arr[10], n, i, j, v, max, min, temp,k;
+         do
+           {
+              
+         cout<<"1-Arrays operation(Search,Insert,Delete\n2-Array alternative printing\n3-Maximum and minimum elements in array"<<endl;
+         cout<<"4-Sum of array\n5-Second largest in array\n6-Reverse the array\n7-Rotation of array\n8-Array in ascending order(Sorting)"<<endl;
+         cout<<"Enter your choice:";
+         cin>>choice1;
+         int arr[100], n, i, j, v, max, min, temp,k,element,place;
          int sum=0;
          cout << "Enter the size of the array : ";
          cin >> n;
@@ -24,36 +32,31 @@ int main()
              sum=sum+arr[i];
             }
          
-         do
-           {
-              
-         cout<<" 1-Arrays operation(Search,Insert,Delete\n2-Array alternative printing\n3-Maximum and minimum elements in array\n4-Second largest in array ";
-         cout<<" 5-Reverse the array\n6-Rotation of array";
-         cin>>choice1;
                switch(choice1)
                {
                    case 1:
-                   int arr[20],i,n,element,place;
-    cout<<"Enter the size of array";
-    cin>>n;
-    for(i=0;i<n;i++)
-    {
-        cin>>arr[i];
-    }
-    cout<<"Enter the element you want to insert :";
-    cin>>element;
-    cout<<"Enter the position at which you want to insert element:";
-    cin>>place;
-    for(i=n;i>=place;i--)
-    {
-        arr[i] = arr[i - 1];
-    }
-    for(i=0;i<place;i++)
-    {
-        arr[place - 1] = element;
-    }
-    for(i=0;i<=n;i++)
-    cout<<arr[i];
+                 cout<<"Enter the size of array";
+                 cin>>n;
+                 for(i=0;i<n;i++)
+                   {
+                     cin>>arr[i];
+                    }
+                 cout<<"Enter the element you want to insert :";
+                 cin>>element;
+                 cout<<"Enter the position at which you want to insert element:";
+                 cin>>place;
+                 for(i=n;i>=place;i--)
+                   {
+                     arr[i] = arr[i - 1];
+                   }
+                 for(i=0;i<place;i++)
+                   {
+                     arr[place - 1] = element;
+                    }
+                  for(i=0;i<=n;i++)
+                  {
+                     cout<<arr[i]; 
+                  }
                    break;
                  case 3:
                  max = arr[0];
@@ -75,12 +78,12 @@ int main()
                  cout << "Largest element : " << max<<endl;
                  cout << "Smallest element : " << min<<endl;
                  break;
-                 case 6:
+                 case 4:
                    {
                      cout << "The sum of array is:"<<sum<<endl;
                      break;
                     }
-                 case 4:
+                 case 5:
                    {
                      int Largest = INT_MIN;
                      int secondlargest = INT_MIN;
@@ -103,7 +106,7 @@ int main()
                      cout<<secondlargest;
                      break;
                     }
-                 case 6: 
+                 case 7: 
                    {
                      cout<<"\nEnter the place you want to shift the array :";
                      cin>>v;
@@ -119,6 +122,28 @@ int main()
                      return 0;
                      break;
                     } 
+                 case 8:
+                   {
+                     for(i=0;i<n-1;i++)
+                       {
+                         for(int j=i+1;j<n;j++)
+                           {
+                             if(arr[j]<arr[i])
+                               {
+                                 temp=arr[j];
+                                 arr[j]=arr[i];
+                                 arr[i]=temp;   
+                                }
+                            } 
+                        }
+                     cout<<"The sorting array is:"<<endl;
+                     for(i=0;i<n;i++)
+                        {
+                           cout<<" "<<arr[i];
+                         }
+                         cout<<endl;
+                      break;
+                    }
                  break;
                 }
             }
