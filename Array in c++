@@ -1,6 +1,8 @@
 #include<iostream>
 #include <limits> 
 #include <climits>
+#include<cstring>
+#include<string>
 using namespace std;
 int main()
 {
@@ -154,11 +156,12 @@ int main()
          break;  
          case 2:
            {
+               string str;
              do{
-                 cout<<"1-Check for palindrome\n2-Check for anagram\n3-Anagram Palindrome\n4-Title case conversion\n5-Sort the string";
+                 cout<<"1-Check for palindrome\n2-Check for anagram\n3-Anagram Palindrome\n4-Title case conversion\n5-Sort the string"<<endl;
                  cout<<"Enter your choice:";
                  cin>>choice2;
-                 cout<<"Enter the string";
+                 cout<<"Enter the string: ";
                  switch(choice2)
                  {
                      case 1:
@@ -183,4 +186,5 @@ int main()
     }
     while(choice!=4);
     return 0;
+
 }
