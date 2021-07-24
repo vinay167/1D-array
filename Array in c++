@@ -4,7 +4,7 @@
 using namespace std;
 int main()
 {
-    int i,choice,choice1;
+    int i,choice,choice1,choice2;
     do
     {
         cout<<"In which section you want to go"<<endl;
@@ -153,8 +153,31 @@ int main()
           
          break;  
          case 2:
-         cout<<"Enter the string\n"<<endl;
-         break;
+           {
+             do{
+                 cout<<"1-Check for palindrome\n2-Check for anagram\n3-Anagram Palindrome\n4-Title case conversion\n5-Sort the string";
+                 cout<<"Enter your choice:";
+                 cin>>choice2;
+                 cout<<"Enter the string";
+                 switch(choice2)
+                 {
+                     case 1:
+                     {
+                         cout<<"Check for palindrome"<<endl;
+                         break;
+                     }
+                     case 2:
+                     {
+                         cout<<"-Check for anagram";
+                         break;
+                     }
+                 }
+                }
+             while(choice1!=100);
+             return 0;
+             break;
+            }
+         
         }
         
     }
